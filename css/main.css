@@ -1,0 +1,39 @@
+.box-class{
+    width:500px;
+    height: 400px;
+    border:1px solid #333;
+    box-shadow:5px 5px 5px black;
+    -webkit-box-shadow:5px 5px 5px black;
+}
+.title-class{
+    text-align: center;
+    font-size: 36px;
+    font-weight: bolder;
+}
+
+.form-class{
+    position: relative;
+    width: 380px;
+    height:260px;
+    margin:0 auto;
+}
+
+label{
+    position: relative;
+    display:inline;
+    padding-right: 310px;
+    margin-bottom: 5px;
+}
+
+input{
+    position: relative;
+    display: inline;
+    width: 40px;
+
+}
+
+button{
+    width: 100px;
+    height: 25px;
+    margin-top:5px;
+}

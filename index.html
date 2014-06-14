@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>hello jquery plugin</title>
+        <meta charset="utf-8" />
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="JQplugin.better.event.ajax.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css" >
+    </head>
+    <body>
+        <div id="hello"></div>
+        <script type="text/javascript">
+            $("#hello").JQPnew({title:"Please choose you favoriate framework",
+                                created:function(ele){
+                                    console.log(ele.tagName + ":" + ele.id)
+                                },
+                                ajaxOptions:{//用户可配置ajax参数
+                                    headers:{
+                                        "X-REQUEST-HEADER":"ERICEVER-CALL"
+                                    }
+                                }
+                            });
+        </script>
+    </body>
+</html>

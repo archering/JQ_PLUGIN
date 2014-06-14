@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>test jquery mani DOM</title>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="clss1">
+            <ul>
+                <li>china</li>
+                <li>uSA</li>
+            </ul>
+        </div>
+        <div class="clss2">
+            <P>hello china</P>
+        </div>
+        <div>
+            <form>
+                <select>
+                    <option value="china">1</option>
+                    <option value="usa">2</option>
+                </select>
+            </form>
+        </div>
+        <script type="text/javascript">
+           // $("document").ready(function(){}) == $(function(){}); //document 可以不加引号，最好加上
+
+            $(".clss1,.clss2").css("border","1px solid red");
+            $("form").css("border","1px solid blue");
+
+            console.log($("div").size());//3
+            console.log($("div").length);//3
+            console.log($("div").get());//[div.clss1, div.clss2, div]
+            $("div").get(0).style.border ="2px dashed red";//get(0)返回的是DOM节点
+            $("div").find("ul").css("border","1px solid green");
+            $("div").find("form").css("border","1px solid green");//find 只能扎到descendent jquey 对象。
+            console.log($("div").find("ul")[0]);//DOM对象，如果不加0 是个jquery 对象数组
+
+            $("div").on("hello",function(e,data){//这个事件注册已定要放在，trigger自定义事件之前
+                console.log("custom type:" + e.type);
+                console.log(data);
+            });
+
+            $("div").each(function(){
+                //alert(this.className);//this
+               // console.log(this);//this 是DOM对象
+                $(this).trigger("hello",{'author':"ericever"});//第二个参数可以是数组或plainObject
+            });
+
+        </script>
+    </body>
+</html>

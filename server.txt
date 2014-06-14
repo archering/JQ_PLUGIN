@@ -1,0 +1,1 @@
+hello jquery plugin this is server!
